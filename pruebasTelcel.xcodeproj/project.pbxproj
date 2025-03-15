@@ -315,20 +315,12 @@
 		34B765362D84EB6100EF25F0 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				34B765372D84EB6100EF25F0 /* Entity */,
 				34B765382D84EB6100EF25F0 /* Presenter */,
 				34B7653A2D84EB6100EF25F0 /* View */,
 				34B7653C2D84EB6100EF25F0 /* Interactor */,
 				34B7653E2D84EB6100EF25F0 /* Router */,
 			);
 			path = Detail;
-			sourceTree = "<group>";
-		};
-		34B765372D84EB6100EF25F0 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		34B765382D84EB6100EF25F0 /* Presenter */ = {
@@ -366,20 +358,12 @@
 		34B765402D84EB6100EF25F0 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				34B765412D84EB6100EF25F0 /* Entity */,
 				34B765422D84EB6100EF25F0 /* Presenter */,
 				34B765442D84EB6100EF25F0 /* View */,
 				34B765462D84EB6100EF25F0 /* Interactor */,
 				34B765482D84EB6100EF25F0 /* Router */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		34B765412D84EB6100EF25F0 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		34B765422D84EB6100EF25F0 /* Presenter */ = {
