@@ -46,9 +46,11 @@ class MovieDetailViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.numberOfLines = 0
         label.textColor = .label
+        label.lineBreakMode = .byWordWrapping
+        label.adjustsFontSizeToFitWidth = false
         return label
     }()
     
@@ -75,6 +77,15 @@ class MovieDetailViewController: UIViewController {
         label.textColor = .black
         label.textAlignment = .center
         return label
+    }()
+    
+    private let starImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(systemName: "star.fill")
+        imageView.tintColor = .black
+        imageView.contentMode = .scaleAspectFit
+        return imageView
     }()
     
     private let overviewTitleLabel: UILabel = {
@@ -113,6 +124,7 @@ class MovieDetailViewController: UIViewController {
         contentView.addSubview(releaseDateLabel)
         contentView.addSubview(ratingView)
         ratingView.addSubview(ratingLabel)
+        ratingView.addSubview(starImageView)
         contentView.addSubview(overviewTitleLabel)
         contentView.addSubview(overviewLabel)
         
@@ -150,19 +162,25 @@ class MovieDetailViewController: UIViewController {
             releaseDateLabel.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
             releaseDateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            ratingView.topAnchor.constraint(equalTo: releaseDateLabel.bottomAnchor, constant: 8),
+            ratingView.topAnchor.constraint(equalTo: releaseDateLabel.bottomAnchor, constant: 10),
             ratingView.leadingAnchor.constraint(equalTo: posterImageView.trailingAnchor, constant: 20),
-            ratingView.widthAnchor.constraint(equalToConstant: 80),
+            ratingView.widthAnchor.constraint(equalToConstant: 100),
             ratingView.heightAnchor.constraint(equalToConstant: 40),
             
-            ratingLabel.centerXAnchor.constraint(equalTo: ratingView.centerXAnchor),
-            ratingLabel.centerYAnchor.constraint(equalTo: ratingView.centerYAnchor),
+            starImageView.centerYAnchor.constraint(equalTo: ratingView.centerYAnchor),
+            starImageView.leadingAnchor.constraint(equalTo: ratingView.leadingAnchor, constant: 10),
+            starImageView.widthAnchor.constraint(equalToConstant: 20),
+            starImageView.heightAnchor.constraint(equalToConstant: 20),
             
-            overviewTitleLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: 30),
+            ratingLabel.centerYAnchor.constraint(equalTo: ratingView.centerYAnchor),
+            ratingLabel.leadingAnchor.constraint(equalTo: starImageView.trailingAnchor, constant: 5),
+            ratingLabel.trailingAnchor.constraint(equalTo: ratingView.trailingAnchor, constant: -10),
+            
+            overviewTitleLabel.topAnchor.constraint(equalTo: posterImageView.bottomAnchor, constant: 50),
             overviewTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             overviewTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            overviewLabel.topAnchor.constraint(equalTo: overviewTitleLabel.bottomAnchor, constant: 8),
+            overviewLabel.topAnchor.constraint(equalTo: overviewTitleLabel.bottomAnchor, constant: 15),
             overviewLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             overviewLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             overviewLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
