@@ -27,7 +27,8 @@ class LoginRouter: LoginRouterProtocol {
     func navigateToMoviesList() {
         let moviesListVC = MoviesListRouter.createMoviesListModule()
         
-        if let window = UIApplication.shared.windows.first {
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = scene.windows.first {
             window.rootViewController = UINavigationController(rootViewController: moviesListVC)
             
             UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)

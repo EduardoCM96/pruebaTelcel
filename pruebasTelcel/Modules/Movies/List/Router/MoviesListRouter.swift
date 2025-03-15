@@ -33,7 +33,8 @@ class MoviesListRouter: MoviesListRouterProtocol {
     func navigateToLogin() {
         let loginVC = LoginRouter.createLoginModule()
         
-        if let window = UIApplication.shared.windows.first {
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = scene.windows.first {
             window.rootViewController = loginVC
             
             UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil, completion: nil)
